@@ -211,15 +211,15 @@ nebula::cpp2::ErrorCode MetaJobExecutor::execute() {
     }
   }
 
-  std::vector<folly::SemiFuture<Status>> futs;
+  std::vector<folly::SemiFuture<Status>> futureStatus;
   for (auto& address : addresses) {
     // transform to the admin host
     auto h = Utils::getAdminAddrFromStoreAddr(address.first);
-    futs.emplace_back(executeInternal(std::move(h), std::move(address.second)));
+    futureStatus.emplace_back(executeInternal(std::move(h), std::move(address.second)));
   }
 
   auto rc = nebula::cpp2::ErrorCode::SUCCEEDED;
-  auto tries = folly::collectAll(std::move(futs)).get();
+  auto tries = folly::collectAll(std::move(futureStatus)).get();
   for (auto& t : tries) {
     if (t.hasException()) {
       LOG(ERROR) << t.exception().what();
