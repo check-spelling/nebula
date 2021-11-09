@@ -153,7 +153,7 @@ Feature: RelationalExpression
       | "Rajon Rondo"       | 33  |
       | "Ray Allen"         | 43  |
       | "Rudy Gay"          | 32  |
-      | "Shaquile O'Neal"   | 47  |
+      | "Shaquille O'Neal"   | 47  |
       | "Steve Nash"        | 45  |
       | "Tiago Splitter"    | 34  |
       | "Tim Duncan"        | 42  |
@@ -196,7 +196,7 @@ Feature: RelationalExpression
       | "Rajon Rondo"       | 33  |
       | "Ray Allen"         | 43  |
       | "Rudy Gay"          | 32  |
-      | "Shaquile O'Neal"   | 47  |
+      | "Shaquille O'Neal"   | 47  |
       | "Steve Nash"        | 45  |
       | "Tiago Splitter"    | 34  |
       | "Tim Duncan"        | 42  |
@@ -224,7 +224,7 @@ Feature: RelationalExpression
       | v                                                             |
       | ("Jason Kidd" :player{age: 45, name: "Jason Kidd"})           |
       | ("Grant Hill" :player{age: 46, name: "Grant Hill"})           |
-      | ("Shaquile O'Neal" :player{age: 47, name: "Shaquile O'Neal"}) |
+      | ("Shaquille O'Neal" :player{age: 47, name: "Shaquille O'Neal"}) |
       | ("Steve Nash" :player{age: 45, name: "Steve Nash"})           |
     And the execution plan should be:
       | id | name        | dependencies | operator info                                      |

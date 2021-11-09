@@ -332,7 +332,7 @@ Feature: Fetch String Vertices
       """
     Then the result should be, in any order:
       | like._dst         |
-      | "Shaquile O'Neal" |
+      | "Shaquille O'Neal" |
       | "Tracy McGrady"   |
       | "Manu Ginobili"   |
       | "Tony Parker"     |
@@ -352,7 +352,7 @@ Feature: Fetch String Vertices
       | like._dst         |
       | "Manu Ginobili"   |
       | "Tony Parker"     |
-      | "Shaquile O'Neal" |
+      | "Shaquille O'Neal" |
       | "Tracy McGrady"   |
     When executing query:
       """

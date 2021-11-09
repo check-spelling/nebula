@@ -154,7 +154,7 @@ Feature: Case Expression
       """
     Then the result should be, in any order:
       | v.name            | v.age |
-      | "Shaquile O'Neal" | 47    |
+      | "Shaquille O'Neal" | 47    |
       | "Grant Hill"      | 46    |
     When executing query:
       """
@@ -166,7 +166,7 @@ Feature: Case Expression
       | r                 |
       | "nothing"         |
       | 46                |
-      | "Shaquile O'Neal" |
+      | "Shaquille O'Neal" |
       | "nothing"         |
 
   Scenario: mixed use of generic case and conditional case

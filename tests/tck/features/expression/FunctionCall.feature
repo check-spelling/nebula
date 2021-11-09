@@ -64,7 +64,7 @@ Feature: Function Call Expression
       """
     Then the result should be, in any order:
       | concat(a.name,c.name)   |
-      | "Shaquile O'NealLakers" |
+      | "Shaquille O'NealLakers" |
     When executing query:
       """
       MATCH (a:player)-[b:serve]-(c:team{name: "Lakers"})
@@ -73,7 +73,7 @@ Feature: Function Call Expression
       """
     Then the result should be, in any order:
       | concat(a.name,"hello") |
-      | "Shaquile O'Nealhello" |
+      | "Shaquille O'Nealhello" |
 
   Scenario: concat_ws
     When executing query:
@@ -92,7 +92,7 @@ Feature: Function Call Expression
       """
     Then the result should be, in any order:
       | result                         |
-      | "Shaquile O'Neal@hello@Lakers" |
+      | "Shaquille O'Neal@hello@Lakers" |
     When executing query:
       """
       MATCH (a:player)-[b:serve]-(c:team{name: "Lakers"})
@@ -101,7 +101,7 @@ Feature: Function Call Expression
       """
     Then the result should be, in any order:
       | result                         |
-      | "Shaquile O'Neal@hello@Lakers" |
+      | "Shaquille O'Neal@hello@Lakers" |
     When executing query:
       """
       MATCH (a:player)-[b:serve]-(c:team{name: "Lakers"})
