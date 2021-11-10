@@ -63,7 +63,7 @@ Feature: Function Call Expression
       RETURN  concat(a.name,c.name)
       """
     Then the result should be, in any order:
-      | concat(a.name,c.name)   |
+      | concat(a.name,c.name)    |
       | "Shaquille O'NealLakers" |
     When executing query:
       """
@@ -72,7 +72,7 @@ Feature: Function Call Expression
       RETURN  concat(a.name, "hello")
       """
     Then the result should be, in any order:
-      | concat(a.name,"hello") |
+      | concat(a.name,"hello")  |
       | "Shaquille O'Nealhello" |
 
   Scenario: concat_ws
@@ -91,7 +91,7 @@ Feature: Function Call Expression
       RETURN concat_ws("@",a.name, "hello", b.likeness, c.name) as result
       """
     Then the result should be, in any order:
-      | result                         |
+      | result                          |
       | "Shaquille O'Neal@hello@Lakers" |
     When executing query:
       """
@@ -100,7 +100,7 @@ Feature: Function Call Expression
       RETURN concat_ws("@",a.name, NULL, "hello", b.likeness, c.name) as result
       """
     Then the result should be, in any order:
-      | result                         |
+      | result                          |
       | "Shaquille O'Neal@hello@Lakers" |
     When executing query:
       """

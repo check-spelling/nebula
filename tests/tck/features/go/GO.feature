@@ -775,7 +775,7 @@ Feature: Go Sentence
       | "Boris Diaw"        |
       | "Tiago Splitter"    |
       | "Dejounte Murray"   |
-      | "Shaquille O'Neal"   |
+      | "Shaquille O'Neal"  |
     When executing query:
       """
       GO FROM 'Tim Duncan' OVER like REVERSELY YIELD $$.player.name
@@ -791,7 +791,7 @@ Feature: Go Sentence
       | "Boris Diaw"        |
       | "Tiago Splitter"    |
       | "Dejounte Murray"   |
-      | "Shaquille O'Neal"   |
+      | "Shaquille O'Neal"  |
     When executing query:
       """
       GO FROM 'Tim Duncan' OVER like REVERSELY WHERE $$.player.age < 35 YIELD $$.player.name
@@ -819,7 +819,7 @@ Feature: Go Sentence
       | "Boris Diaw"        |
       | "Tiago Splitter"    |
       | "Dejounte Murray"   |
-      | "Shaquille O'Neal"   |
+      | "Shaquille O'Neal"  |
       | EMPTY               |
       | EMPTY               |
 
@@ -908,15 +908,15 @@ Feature: Go Sentence
       | "Cavaliers"  | "Kyrie Irving"      |
       | "Cavaliers"  | "LeBron James"      |
       | "Cavaliers"  | "LeBron James"      |
-      | "Cavaliers"  | "Shaquille O'Neal"   |
-      | "Cavaliers"  | "Shaquille O'Neal"   |
+      | "Cavaliers"  | "Shaquille O'Neal"  |
+      | "Cavaliers"  | "Shaquille O'Neal"  |
       | "Cavaliers"  | "LeBron James"      |
       | "Cavaliers"  | "LeBron James"      |
       | "Heat"       | "Amar'e Stoudemire" |
       | "Heat"       | "Dwyane Wade"       |
       | "Heat"       | "LeBron James"      |
       | "Heat"       | "Ray Allen"         |
-      | "Heat"       | "Shaquille O'Neal"   |
+      | "Heat"       | "Shaquille O'Neal"  |
       | "Heat"       | "Dwyane Wade"       |
       | "Lakers"     | "Dwight Howard"     |
       | "Lakers"     | "JaVale McGee"      |
@@ -924,7 +924,7 @@ Feature: Go Sentence
       | "Lakers"     | "LeBron James"      |
       | "Lakers"     | "Paul Gasol"        |
       | "Lakers"     | "Rajon Rondo"       |
-      | "Lakers"     | "Shaquille O'Neal"   |
+      | "Lakers"     | "Shaquille O'Neal"  |
       | "Lakers"     | "Steve Nash"        |
     When executing query:
       """
@@ -940,19 +940,19 @@ Feature: Go Sentence
       | "Cavaliers"  | "Dwyane Wade"       |
       | "Cavaliers"  | "Kyrie Irving"      |
       | "Cavaliers"  | "Kyrie Irving"      |
-      | "Cavaliers"  | "Shaquille O'Neal"   |
-      | "Cavaliers"  | "Shaquille O'Neal"   |
+      | "Cavaliers"  | "Shaquille O'Neal"  |
+      | "Cavaliers"  | "Shaquille O'Neal"  |
       | "Heat"       | "Amar'e Stoudemire" |
       | "Heat"       | "Dwyane Wade"       |
       | "Heat"       | "Ray Allen"         |
-      | "Heat"       | "Shaquille O'Neal"   |
+      | "Heat"       | "Shaquille O'Neal"  |
       | "Heat"       | "Dwyane Wade"       |
       | "Lakers"     | "Dwight Howard"     |
       | "Lakers"     | "JaVale McGee"      |
       | "Lakers"     | "Kobe Bryant"       |
       | "Lakers"     | "Paul Gasol"        |
       | "Lakers"     | "Rajon Rondo"       |
-      | "Lakers"     | "Shaquille O'Neal"   |
+      | "Lakers"     | "Shaquille O'Neal"  |
       | "Lakers"     | "Steve Nash"        |
     When executing query:
       """
@@ -994,7 +994,7 @@ Feature: Go Sentence
       | "Boris Diaw"        |
       | "Tiago Splitter"    |
       | "Dejounte Murray"   |
-      | "Shaquille O'Neal"   |
+      | "Shaquille O'Neal"  |
     When executing query:
       """
       GO FROM 'Tim Duncan' OVER serve, like bidirect YIELD serve._dst, like._dst
@@ -1013,7 +1013,7 @@ Feature: Go Sentence
       | EMPTY      | "Boris Diaw"        |
       | EMPTY      | "Tiago Splitter"    |
       | EMPTY      | "Dejounte Murray"   |
-      | EMPTY      | "Shaquille O'Neal"   |
+      | EMPTY      | "Shaquille O'Neal"  |
     When executing query:
       """
       GO FROM 'Tim Duncan' OVER serve bidirect YIELD $$.team.name
@@ -1038,7 +1038,7 @@ Feature: Go Sentence
       | "Boris Diaw"        |
       | "Tiago Splitter"    |
       | "Dejounte Murray"   |
-      | "Shaquille O'Neal"   |
+      | "Shaquille O'Neal"  |
     When executing query:
       """
       GO FROM 'Tim Duncan' OVER like bidirect WHERE like.likeness > 90
@@ -1070,7 +1070,7 @@ Feature: Go Sentence
       | "Tim Duncan"   | EMPTY      | EMPTY        | "Boris Diaw"        | "Boris Diaw"        |
       | "Tim Duncan"   | EMPTY      | EMPTY        | "Tiago Splitter"    | "Tiago Splitter"    |
       | "Tim Duncan"   | EMPTY      | EMPTY        | "Dejounte Murray"   | "Dejounte Murray"   |
-      | "Tim Duncan"   | EMPTY      | EMPTY        | "Shaquille O'Neal"   | "Shaquille O'Neal"   |
+      | "Tim Duncan"   | EMPTY      | EMPTY        | "Shaquille O'Neal"  | "Shaquille O'Neal"  |
       | "Tim Duncan"   | EMPTY      | EMPTY        | EMPTY               | "Tony Parker"       |
       | "Tim Duncan"   | EMPTY      | EMPTY        | EMPTY               | "Manu Ginobili"     |
       | "Tim Duncan"   | EMPTY      | EMPTY        | EMPTY               | "Danny Green"       |
@@ -1095,7 +1095,7 @@ Feature: Go Sentence
       | "Boris Diaw"        | EMPTY      | EMPTY               |
       | "Tiago Splitter"    | EMPTY      | EMPTY               |
       | "Dejounte Murray"   | EMPTY      | EMPTY               |
-      | "Shaquille O'Neal"   | EMPTY      | EMPTY               |
+      | "Shaquille O'Neal"  | EMPTY      | EMPTY               |
       | EMPTY               | EMPTY      | "Tony Parker"       |
       | EMPTY               | EMPTY      | "Manu Ginobili"     |
       | EMPTY               | EMPTY      | "LaMarcus Aldridge" |
@@ -1264,7 +1264,7 @@ Feature: Go Sentence
       | "Danny Green"       |
       | "Aron Baynes"       |
       | "Tiago Splitter"    |
-      | "Shaquille O'Neal"   |
+      | "Shaquille O'Neal"  |
       | "Rudy Gay"          |
       | "Damian Lillard"    |
     When executing query:
@@ -1283,7 +1283,7 @@ Feature: Go Sentence
       | "Danny Green"       |
       | "Aron Baynes"       |
       | "Tiago Splitter"    |
-      | "Shaquille O'Neal"   |
+      | "Shaquille O'Neal"  |
       | "Rudy Gay"          |
       | "Damian Lillard"    |
     When executing query:
@@ -1301,7 +1301,7 @@ Feature: Go Sentence
       | "Danny Green"       |
       | "Aron Baynes"       |
       | "Tiago Splitter"    |
-      | "Shaquille O'Neal"   |
+      | "Shaquille O'Neal"  |
       | "Rudy Gay"          |
       | "Damian Lillard"    |
     When executing query:
@@ -1368,7 +1368,7 @@ Feature: Go Sentence
       | "Danny Green"       |
       | "Aron Baynes"       |
       | "Tiago Splitter"    |
-      | "Shaquille O'Neal"   |
+      | "Shaquille O'Neal"  |
       | "Rudy Gay"          |
       | "Damian Lillard"    |
       | "LeBron James"      |
@@ -1393,7 +1393,7 @@ Feature: Go Sentence
       | "Danny Green"       |
       | "Aron Baynes"       |
       | "Tiago Splitter"    |
-      | "Shaquille O'Neal"   |
+      | "Shaquille O'Neal"  |
       | "Rudy Gay"          |
       | "Damian Lillard"    |
       | "LeBron James"      |
