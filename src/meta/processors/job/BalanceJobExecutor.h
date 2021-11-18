@@ -20,7 +20,7 @@ using LeaderBalancePlan = std::vector<std::tuple<GraphSpaceID, PartitionID, Host
 using ZoneNameAndParts = std::pair<std::string, std::vector<PartitionID>>;
 
 class BalanceJobExecutor : public MetaJobExecutor {
-  friend void testRestBlancer();
+  friend void testRestBalancer();
 
  public:
   BalanceJobExecutor(JobID jobId,
@@ -100,7 +100,7 @@ class DataBalanceJobExecutor : public BalanceJobExecutor {
   FRIEND_TEST(BalanceTest, BalanceWithComplexZoneTest);
   FRIEND_TEST(BalanceIntegrationTest, LeaderBalanceTest);
   FRIEND_TEST(BalanceIntegrationTest, BalanceTest);
-  friend void testRestBlancer();
+  friend void testRestBalancer();
 
  public:
   DataBalanceJobExecutor(JobDescription jobDescription,
@@ -186,7 +186,7 @@ class LeaderBalanceJobExecutor : public BalanceJobExecutor {
   FRIEND_TEST(BalanceTest, BalanceWithComplexZoneTest);
   FRIEND_TEST(BalanceIntegrationTest, LeaderBalanceTest);
   FRIEND_TEST(BalanceIntegrationTest, BalanceTest);
-  friend void testRestBlancer();
+  friend void testRestBalancer();
 
  public:
   LeaderBalanceJobExecutor(JobID jobId,
@@ -221,7 +221,7 @@ class LeaderBalanceJobExecutor : public BalanceJobExecutor {
                         LeaderBalancePlan& plan,
                         GraphSpaceID spaceId);
 
-  void simplifyLeaderBalnacePlan(GraphSpaceID spaceId, LeaderBalancePlan& plan);
+  void simplifyLeaderBalancePlan(GraphSpaceID spaceId, LeaderBalancePlan& plan);
 
  private:
   static std::atomic_bool inLeaderBalance_;

@@ -945,7 +945,7 @@ folly::Future<Status> LeaderBalanceJobExecutor::executeInternal(HostAddr&& addre
                    << "Space: " << spaceId;
         continue;
       }
-      simplifyLeaderBalnacePlan(spaceId, plan);
+      simplifyLeaderBalancePlan(spaceId, plan);
       for (const auto& task : plan) {
         futures.emplace_back(adminClient_->transLeader(std::get<0>(task),
                                                        std::get<1>(task),
@@ -969,10 +969,10 @@ folly::Future<Status> LeaderBalanceJobExecutor::executeInternal(HostAddr&& addre
 
     inLeaderBalance_ = false;
     if (failed != 0) {
-      LOG(ERROR) << failed << " partiton failed to transfer leader";
+      LOG(ERROR) << failed << " partition failed to transfer leader";
     }
     onFinished_(false);
-    return Status::Error("partiton failed to transfer leader");
+    return Status::Error("partition failed to transfer leader");
   }
   onFinished_(true);
   return Status::OK();
@@ -988,7 +988,7 @@ ErrorOr<nebula::cpp2::ErrorCode, bool> LeaderBalanceJobExecutor::buildLeaderBala
   PartAllocation peersMap;
   HostParts leaderHostParts;
   size_t leaderParts = 0;
-  // store peers of all paritions in peerMap
+  // store peers of all partitions in peerMap
   folly::SharedMutex::ReadHolder rHolder(LockUtils::spaceLock());
   const auto& prefix = MetaKeyUtils::partPrefix(spaceId);
   std::unique_ptr<kvstore::KVIterator> iter;
@@ -1110,7 +1110,7 @@ int32_t LeaderBalanceJobExecutor::acquireLeaders(HostParts& allHostParts,
                                                  const HostAddr& target,
                                                  LeaderBalancePlan& plan,
                                                  GraphSpaceID spaceId) {
-  // host will loop for the partition which is not leader, and try to acuire the
+  // host will loop for the partition which is not leader, and try to acquire the
   // leader
   int32_t taskCount = 0;
   std::vector<PartitionID> diff;
@@ -1213,7 +1213,7 @@ int32_t LeaderBalanceJobExecutor::giveupLeaders(HostParts& leaderParts,
   return taskCount;
 }
 
-void LeaderBalanceJobExecutor::simplifyLeaderBalnacePlan(GraphSpaceID spaceId,
+void LeaderBalanceJobExecutor::simplifyLeaderBalancePlan(GraphSpaceID spaceId,
                                                          LeaderBalancePlan& plan) {
   std::unordered_map<PartitionID, LeaderBalancePlan> buckets;
   for (auto& task : plan) {
